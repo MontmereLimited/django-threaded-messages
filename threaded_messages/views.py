@@ -303,7 +303,8 @@ def recipient_search(request):
         for user in users:
             avatar_img_url = avatar_url(user, size=50)
             data.append({"id": user.username,
-                         "url": reverse("profile_detail",args=(user.username,)),
+                         #"url": reverse("profile_detail",args=(user.username,)),
+                         "url": '',
                          "name": "%s %s"%(user.first_name, user.last_name),
                          "img": avatar_img_url})
 
