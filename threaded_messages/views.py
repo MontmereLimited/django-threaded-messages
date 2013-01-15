@@ -15,7 +15,11 @@ from django.template.loader import render_to_string
 from avatar.templatetags.avatar_tags import avatar_url
 from threaded_messages.models import *
 from threaded_messages.forms import ComposeForm, ReplyForm
-import simplejson
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
 from threaded_messages.models import Thread
 import logging
 
@@ -303,5 +307,5 @@ def recipient_search(request):
                          "name": "%s %s"%(user.first_name, user.last_name),
                          "img": avatar_img_url})
 
-        return HttpResponse(simplejson.dumps(data),
+        return HttpResponse(json.dumps(data),
                             mimetype='application/json')
