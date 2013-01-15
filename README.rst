@@ -50,7 +50,7 @@ Dependencies
 
 Install
 ===============
-pip install -e http://github.com/philippWassibauer/django-threaded-messages.git#egg=threaded-messages
+pip install -e "git+http://github.com/philippWassibauer/django-threaded-messages.git#egg=threaded-messages"
 
 or
 
