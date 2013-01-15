@@ -305,7 +305,7 @@ def recipient_search(request):
             data.append({"id": user.username,
                          #"url": reverse("profile_detail",args=(user.username,)),
                          "url": '',
-                         "name": "%s %s"%(user.first_name, user.last_name),
+                         "name": "%s %s".strip() % (user.first_name, user.last_name) if user.first_name or user.last_name else user.username,
                          "img": avatar_img_url})
 
         return HttpResponse(json.dumps(data),
