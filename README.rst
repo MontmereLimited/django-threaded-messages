@@ -42,10 +42,10 @@ When a user replies online the recipient will get an email to which he can respo
 Dependencies
 ===============
 * Haystack
-* Django-notification
+* Django-notification (this version is compatible with Django 1.4: https://github.com/yourcelf/django-notification#egg=django_notification-dev )
 * django-avatar
 * django-pagination
-* django-uni-form
+* django-crispy-forms
 * sendgrid-parse-api (released soon) - only if email replies should be activated
 
 Install
