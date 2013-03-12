@@ -31,7 +31,7 @@
         $().ready(function() {
             var recipient =  $("#id_recipient").val();
             $("#id_recipient").val("")
-            $("#id_recipient").tokenInput("{% url recipient_search %}?format=json", {
+            $("#id_recipient").tokenInput("{% url "recipient_search" %}?format=json", {
                 classes: {
                     tokenList: "token-input-list-facebook",
                     token: "token-input-token-facebook",
@@ -55,7 +55,7 @@
              /*
             $( "#id_recipient" ).autocomplete({
                 minLength: 2,
-                source: "{% url recipient_search %}?format=json",
+                source: "{% url "recipient_search" %}?format=json",
                 focus: function( event, ui ) {
                     return false;
                 },

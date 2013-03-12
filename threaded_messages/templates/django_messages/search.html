@@ -14,21 +14,21 @@
         <div style="clear:both;"></div>
         <div class="inbox-bar">
             <div class="page-search">
-                <form action="{% url messages_search %}" method="GET">
+                <form action="{% url "messages_search" %}" method="GET">
                     <input name="q" type="text" {% if not search_term %}title="{% trans 'Search Messages' %}"{% endif %}
                            value="{{ search_term }}" />
                     <button type="submit" class="lupe-on-white"></button>
                     
                 </form>
             </div>
-            <a href="{% url modal_messages_compose %}" class="green-button" rel='facebox'>
+            <a href="{% url "modal_messages_compose" %}" class="green-button" rel='facebox'>
                  <img src="{{ STATIC_URL }}img/icons/18/add_message.png"/> {% trans "Create message" %}
             </a>
             <div class="message-pagination">{% paginate %}</div>
             <div style="clear: both;"></div>
         </div>
     </div>
-    <form action="{% url messages_batch_update %}" method="post">
+    <form action="{% url "messages_batch_update" %}" method="post">
         <h3>{% trans "Searching for" %}: {{ search_term }}</h3>
         {% csrf_token %}
         <div style="clear: both;"></div>

@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/token-input.css" type="text/css" />
 <form id="message-modal-form" 
-      action="{% url messages_compose %}" method="post"
+      action="{% url "messages_compose" %}" method="post"
       class="uniForm modal-message-form grey-form">
     {% csrf_token %}
     <fieldset class="inlineLabels">
@@ -51,7 +51,7 @@
             parameters["prePopulate"] = [{id:recipient, name:"{{ form.recipient.first_name }} {{ form.recipient.last_name }}"}]
         }
 
-        $("#id_recipient").tokenInput("{% url recipient_search %}?format=json", parameters);
+        $("#id_recipient").tokenInput("{% url "recipient_search" %}?format=json", parameters);
         
         $('#message-modal-form').ajaxForm({
             //target: "target",

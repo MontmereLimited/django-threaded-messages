@@ -13,25 +13,25 @@
           {% trans "Inbox"|upper %}
         </h2>
         <div class="prefix_0 grid_6">
-          <form action="{% url messages_search %}" method="GET" style="float: right">
+          <form action="{% url "messages_search" %}" method="GET" style="float: right">
             <label class="inline" for="q">{% if keywords %}{{ keywords }}{% else %}{% trans 'Search Messages' %}{% endif %}</label>
             <input type="text" title="{% trans 'Search Messages' %}" id="q" name="q" class="message-search forum-search" />
           </form>
-          <a href="{% url modal_messages_compose %}" style="float: right" class="small-green-button" rel='facebox'>
+          <a href="{% url "modal_messages_compose" %}" style="float: right" class="small-green-button" rel='facebox'>
              {% trans "Create message" %}
           </a>
         </div>
         <div style="clear: both;"></div>
       </div>
     </div>
-    <form action="{% url messages_batch_update %}" method="post">
+    <form action="{% url "messages_batch_update" %}" method="post">
         {% csrf_token %}
         <div class="inbox-action-box">
               <div style="float: left; margin-top: 7px;">
                   {% trans "show" %}:
-                  {% if only_unread or only_read %}<a href="{% url messages_inbox %}">{% trans "all" %}</a>{% else %}{% trans "all" %}{% endif %} ·
-                  {% if not only_read %}<a href="{% url messages_inbox %}?only_read=1">{% trans "read" %}</a>{% else %}{% trans "read" %}{% endif %} ·
-                  {% if not only_unread %}<a href="{% url messages_inbox %}?only_unread=1">{% trans "unread" %}</a>{% else %}{% trans "unread" %}{% endif %}
+                  {% if only_unread or only_read %}<a href="{% url "messages_inbox" %}">{% trans "all" %}</a>{% else %}{% trans "all" %}{% endif %} ·
+                  {% if not only_read %}<a href="{% url "messages_inbox" %}?only_read=1">{% trans "read" %}</a>{% else %}{% trans "read" %}{% endif %} ·
+                  {% if not only_unread %}<a href="{% url "messages_inbox" %}?only_unread=1">{% trans "unread" %}</a>{% else %}{% trans "unread" %}{% endif %}
               </div>
               <div style="float: right">
                   <button type="submit" name="action" value="read" class="small-green-button">{% trans "mark as read" %}</button>
