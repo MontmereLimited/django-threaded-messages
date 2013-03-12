@@ -1,10 +1,10 @@
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
+from django.shortcuts import redirect
 
 from threaded_messages.views import *
 
 urlpatterns = patterns('',
-    url(r'^$', redirect_to, {'url': 'inbox/'}),
+    url(r'^$', redirect, {'url': 'inbox/'}),
     url(r'^search/$', search, name='messages_search'),
     url(r'^inbox/$', inbox, name='messages_inbox'),
     url(r'^outbox/$', outbox, name='messages_outbox'),
